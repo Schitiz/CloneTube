@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
@@ -11,16 +12,16 @@ const routes = require('./routes');
 const localMiddleware = require('./middlewares');
 
 const app = express();
+app.set('view engine', 'pug');
 
 //* 1) Middlewares
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(localMiddleware.getLocals);
-
-app.set('view engine', 'pug');
 
 //* 2) Routes
 app.use(routes.home, globalRouter);
