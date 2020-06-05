@@ -33,7 +33,7 @@ const routes = {
   upload: UPLOAD,
   videoDetail: VIDEO_DETAIL,
   editVideo: EDIT_VIDEO,
-  deleteVideo: EDIT_VIDEO,
+  deleteVideo: DELETE_VIDEO,
 };
 
 module.exports = routes;
