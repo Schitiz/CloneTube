@@ -13,10 +13,10 @@ const EDIT_PROFILE = '/edit-profile';
 const CHANGE_PASSWORD = '/change-password';
 
 // 3) VIDEO ROUTES
-const UPLOAD = '/upload';
 const VIDEOS = '/videos';
+const UPLOAD = '/upload';
 const VIDEO_DETAIL = '/:id';
-const EDIT_VIDEO = '/:edit/edit';
+const EDIT_VIDEO = '/:id/edit';
 const DELETE_VIDEO = '/:id/delete';
 
 const routes = {
@@ -26,12 +26,22 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userDetail: USER_DETAILS,
+  userDetail: (id) => {
+    if (id) {
+      return `/users/${id}`;
+    }
+    return USER_DETAILS;
+  },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail: VIDEO_DETAIL,
+  videoDetail: (id) => {
+    if (id) {
+      return `/videos/${id}`;
+    }
+    return VIDEO_DETAIL;
+  },
   editVideo: EDIT_VIDEO,
   deleteVideo: DELETE_VIDEO,
 };

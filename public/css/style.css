@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 80%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -19,6 +19,4 @@ body {
   color: #777;
   padding: 3rem;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
