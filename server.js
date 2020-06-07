@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const app = require('./app');
-const Video = require('./models/videoModel');
-const Comment = require('./models/commentModel');
+// import Video from './models/videoModel';
+// import Comment from './models/commentModel';
 
 dotenv.config({ path: './config.env' });
 
