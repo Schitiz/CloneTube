@@ -1,4 +1,8 @@
+const multer = require('multer');
+
 const routes = require('./routes');
+
+exports.uploadVideo = multer({ dest: 'uploads/videos/' }).single('videoFile');
 
 exports.getLocals = (req, res, next) => {
   res.locals.siteName = 'CloneTube';

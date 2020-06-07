@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const app = require('./app');
+const Video = require('./models/videoModel');
+const Comment = require('./models/commentModel');
 
 dotenv.config({ path: './config.env' });
 
@@ -10,6 +12,7 @@ mongoose
     useNewUrlParser: true,
     useFindAndModify: true,
     useCreateIndex: true,
+    useUnifiedTopology: true,
   })
   .then(() => console.log('DB Connected Successfully'));
 
