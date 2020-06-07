@@ -8,7 +8,7 @@ const ENTRY_FILE = path.resolve(__dirname, 'assets', 'js', 'main.js');
 const OUTPUT_DIRECTORY = path.join(__dirname, 'static');
 
 module.exports = {
-  entry: ENTRY_FILE,
+  entry: [ENTRY_FILE],
   mode: MODE,
   output: {
     path: OUTPUT_DIRECTORY,
@@ -20,13 +20,13 @@ module.exports = {
       {
         test: /\.(js)$/,
         use: [
-          {
-            loader: 'babel-loader',
-          },
+          // {
+          //   loader: 'babel-loader',
+          // },
         ],
       },
       {
-        test: /\.(scss)$/,
+        test: /\.(css)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -37,7 +37,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugin() {
+              plugins() {
                 return [
                   autoprefixer({
                     browsers: 'cover 99.5%',
@@ -46,14 +46,14 @@ module.exports = {
               },
             },
           },
-          {
-            loader: 'sass-loader',
-          },
+          // {
+          //   loader: 'sass-loader',
+          // },
         ],
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin('')],
+  plugins: [new MiniCssExtractPlugin()],
   target: 'node',
   node: {
     // Need this when working with express, otherwise the build fails

@@ -121,3 +121,5 @@ tags
 # customs
 *.env
 uploads
+static
+build
