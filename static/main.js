@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/css/styles.css":
-/*!*******************************!*\
-  !*** ./assets/css/styles.css ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/css/styles.css?");
-
-/***/ }),
-
 /***/ "./assets/js/main.js":
 /*!***************************!*\
   !*** ./assets/js/main.js ***!
@@ -105,7 +94,18 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./asse
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/styles.css */ \"./assets/css/styles.css\");\n/* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n// eslint-disable-next-line node/no-unsupported-features/es-syntax\n\n\n\n//# sourceURL=webpack:///./assets/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/styles.scss */ \"./assets/scss/styles.scss\");\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n// eslint-disable-next-line node/no-unsupported-features/es-syntax\n\n\n//# sourceURL=webpack:///./assets/js/main.js?");
+
+/***/ }),
+
+/***/ "./assets/scss/styles.scss":
+/*!*********************************!*\
+  !*** ./assets/scss/styles.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?");
 
 /***/ }),
 

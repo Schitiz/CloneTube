@@ -20,13 +20,13 @@ module.exports = {
       {
         test: /\.(js)$/,
         use: [
-          // {
-          //   loader: 'babel-loader',
-          // },
+          {
+            loader: 'babel-loader',
+          },
         ],
       },
       {
-        test: /\.(css)$/,
+        test: /\.(scss)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -46,9 +46,9 @@ module.exports = {
               },
             },
           },
-          // {
-          //   loader: 'sass-loader',
-          // },
+          {
+            loader: 'sass-loader',
+          },
         ],
       },
     ],
