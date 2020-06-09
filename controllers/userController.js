@@ -1,4 +1,7 @@
+const passport = require('passport');
+
 const routes = require('../routes');
+const User = require('../models/userModel');
 
 exports.getJoin = (req, res) => {
   res.render('join', {
@@ -6,7 +9,17 @@ exports.getJoin = (req, res) => {
   });
 };
 
-exports.postJoin = (req, res) => {
+exports.githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+
+exports.postGithubLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
+exports.githubLogin = passport.authenticate('github');
+
+exports.postJoin = async (req, res, next) => {
   // console.log(req.body);
   const {
     // eslint-disable-next-line no-unused-vars
@@ -19,10 +32,19 @@ exports.postJoin = (req, res) => {
       pageTitle: 'Join',
     });
   } else {
-    // TODO: Register User
-    // TODO: Log User In
-
-    res.redirect(routes.home);
+    try {
+      // TODO: Register User
+      // TODO: Log User In
+      const user = await User({
+        name,
+        email,
+      });
+      await User.register(user, password);
+      next();
+    } catch (err) {
+      console.log(err);
+      res.redirect(routes.home);
+    }
   }
 };
 exports.getLogin = (req, res) =>
@@ -30,12 +52,14 @@ exports.getLogin = (req, res) =>
     pageTitle: 'Login',
   });
 
-exports.postLogin = (req, res) => {
-  res.redirect(routes.home);
-};
-
+exports.postLogin = passport.authenticate('local', {
+  failureRedirect: routes.login,
+  successRedirect: routes.home,
+});
 exports.logout = (req, res) => {
   // TODO: Process LogOut
+  req.logout();
+  req.session.destroy();
   res.redirect(routes.home);
 };
 

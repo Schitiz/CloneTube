@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-const app = require('./app');
-// import Video from './models/videoModel';
-// import Comment from './models/commentModel';
-
 dotenv.config({ path: './config.env' });
+
+const app = require('./app');
+
+// const Video = require('./models/videoModel');
+// const Comment = require('./models/commentModel');
+// const User = require('./models/userModel');
 
 mongoose
   .connect(process.env.DATABASE_URL, {
